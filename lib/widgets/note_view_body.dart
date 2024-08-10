@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes/widgets/custom_card.dart';
+import 'package:notes/widgets/note_list_view.dart';
 
 class NoteViewBody extends StatelessWidget {
   const NoteViewBody({super.key});
@@ -10,6 +11,7 @@ class NoteViewBody extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: [
+          
            Row(
             children: [
               Text(
@@ -23,7 +25,8 @@ class NoteViewBody extends StatelessWidget {
               ),
             ],
           ),
-          CustomCard(),
+          SizedBox(height: 14),
+          Expanded(child: NoteListView()),
         ],
       ),
     );
