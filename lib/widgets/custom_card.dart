@@ -33,6 +33,7 @@ class CustomCard extends StatelessWidget {
                       child: const  Icon(
                           Icons.delete,
                           size: 30,
+                          color: Colors.black,
                         ),
                     ),
                     ],

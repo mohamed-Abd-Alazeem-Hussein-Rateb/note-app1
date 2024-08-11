@@ -16,7 +16,6 @@ class NoteApp extends StatelessWidget {
          brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       home:  const NoteView(),
     );
   }
