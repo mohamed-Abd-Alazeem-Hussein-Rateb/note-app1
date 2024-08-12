@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:notes/widgets/custom+text_field.dart';
+import 'package:notes/widgets/custom_text_field.dart';
 import 'package:notes/widgets/custom_bottom.dart';
 
 class NoteBottomSheet extends StatelessWidget {

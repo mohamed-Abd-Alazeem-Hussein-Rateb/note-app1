@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes/widgets/editbodyview.dart';
+import 'package:notes/views/edit_note_view.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key, required this.title, required this.description, required this.date, required this.color});
@@ -12,7 +12,7 @@ class CustomCard extends StatelessWidget {
     return InkWell(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return EditNoteBodyView();
+          return EditNoteView();
         } ));
       },
       child: Card(
