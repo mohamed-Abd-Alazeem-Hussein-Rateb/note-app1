@@ -43,6 +43,7 @@ class EditNoteBodyView extends StatelessWidget {
             hint: 'content',
             maxline: 6,
           ),
+          
         ],
       ),
     );
