@@ -10,7 +10,7 @@ class CustomBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: KPrimaaryryColor,
+        color: kPrimaaryryColor,
         borderRadius: BorderRadius.circular(16),
       ),
       height: 55,
