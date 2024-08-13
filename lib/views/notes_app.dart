@@ -17,13 +17,13 @@ class NoteView extends StatelessWidget {
             ),
             context: context, 
             builder: (context){
-       return NoteBottomSheet();
+       return const NoteBottomSheet();
           }
           );
         },
         child: const Icon(Icons.add), 
       ),
-      body: NoteViewBody(),
+      body:const NoteViewBody(),
     );
   }
 }
