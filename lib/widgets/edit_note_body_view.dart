@@ -43,7 +43,6 @@ class EditNoteBodyView extends StatelessWidget {
             hint: 'content',
             maxline: 6,
           ),
-          Image.asset('assets/beatfil.jpg')
         ],
       ),
     );

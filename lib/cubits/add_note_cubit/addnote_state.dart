@@ -8,7 +8,7 @@ final class AddnoteInitial extends AddnoteState {}
  final class AddNoteLoading extends AddnoteState {}
  final class AddnoteSucess extends  AddnoteState {}
  final class AddnoteError extends AddnoteState {
-  final String errorrmassge;
+  final String errMassge;
 
-  AddnoteError({required this.errorrmassge});
+  AddnoteError({required this.errMassge});
  }
