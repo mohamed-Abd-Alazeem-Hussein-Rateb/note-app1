@@ -14,7 +14,7 @@ class NoteModle extends HiveObject {
   final String data;
 
   @HiveField(3)
-  final String color;
+  final int color;
 
   NoteModle({
     required this.title,

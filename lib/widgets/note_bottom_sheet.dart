@@ -10,24 +10,30 @@ class NoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:const EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0),
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddnoteCubit, AddnoteState>(
-          listener: (context, state) {
-            if (state is AddNoteLoading) {
-              const Center(child: CircularProgressIndicator());
-            }
-            if (state is AddnoteSucess) {
-              Navigator.pop(context);
-            }
-            if (state is AddnoteError) {
-              print('falied ${state.errMassge}');
-            }
-          },
-          builder: (context, state) {
-            return const AddValditeBotttomSheet();
-          },
+    return BlocProvider(
+      create: (context) => AddnoteCubit(),
+      child: Padding(
+        padding:const EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0),
+        child: SingleChildScrollView(
+          child: BlocConsumer<AddnoteCubit, AddnoteState>(
+            listener: (context, state) {
+              if (state is AddNoteLoading) {
+                const Center(child: CircularProgressIndicator(
+                  strokeWidth: 5,
+                  strokeAlign: BorderSide.strokeAlignCenter,
+                ));
+              }
+              if (state is AddnoteSucess) {
+                Navigator.pop(context);
+              }
+              if (state is AddnoteError) {
+                print('falied ${state.errMassge}');
+              }
+            },
+            builder: (context, state) {
+              return const AddValditeBotttomSheet();
+            },
+          ),
         ),
       ),
     );

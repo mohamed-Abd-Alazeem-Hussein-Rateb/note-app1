@@ -20,7 +20,7 @@ class NoteModleAdapter extends TypeAdapter<NoteModle> {
       title: fields[0] as String,
       content: fields[1] as String,
       data: fields[2] as String,
-      color: fields[3] as String,
+      color: fields[3] as int,
     );
   }
 
