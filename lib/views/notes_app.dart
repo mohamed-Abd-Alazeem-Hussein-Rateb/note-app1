@@ -12,6 +12,7 @@ class NoteView extends StatelessWidget {
         backgroundColor: Colors.blue,
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,// to make the bottom sheet scrollable
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
             ),
