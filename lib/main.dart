@@ -14,7 +14,7 @@ void main() async {
   Hive.registerAdapter(NoteModleAdapter());
 
   // Then open the box
-  await Hive.openBox(kNotesBox);
+  await Hive.openBox<NoteModle>(kNotesBox);
 
   runApp(const NoteApp());
 }
