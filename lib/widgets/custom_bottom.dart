@@ -3,13 +3,16 @@ import 'package:notes/widgets/constant.dart';
 
 class CustomBottom extends StatelessWidget {
   const CustomBottom({
-    super.key, this.onTap,
+    super.key,
+    this.onTap,
+    this.isloading = false,
   });
   final void Function()? onTap;
+  final bool isloading;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap ,
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
           color: kPrimaaryryColor,
@@ -17,7 +20,21 @@ class CustomBottom extends StatelessWidget {
         ),
         height: 55,
         width: MediaQuery.of(context).size.width,
-        child:const Center(child:  Text('Add Note',style: TextStyle(fontSize: 17,color: Colors.black,fontWeight: FontWeight.bold),)),
+        child: Center(
+            child: isloading
+                ? const SizedBox(
+                    height: 25,
+                    width: 25,
+                    child: CircularProgressIndicator(
+                      color: Colors.black,
+                    ))
+                : const Text(
+                    'Add Note',
+                    style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
+                  )),
       ),
     );
   }

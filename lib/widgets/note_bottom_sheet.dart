@@ -31,7 +31,9 @@ class NoteBottomSheet extends StatelessWidget {
               }
             },
             builder: (context, state) {
-              return const AddValditeBotttomSheet();
+              return  AbsorbPointer(
+                absorbing: state is AddNoteLoading ? true : false,
+                child:const  AddValditeBotttomSheet());
             },
           ),
         ),

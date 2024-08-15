@@ -38,6 +38,7 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
             height: 18,
           ),
           CustomTextField(
+            
             onSaved: (value) {
               subTitle = value;
             },
@@ -47,7 +48,10 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
           const SizedBox(
             height: 22,
           ),
-          CustomBottom(
+         BlocBuilder<AddnoteCubit, AddnoteState>(
+          builder: (context, state) {
+           return  CustomBottom(
+            isloading: state is AddNoteLoading ? true : false,
             onTap: () {
               if (fromkey.currentState!.validate()) {
                 fromkey.currentState!.save();
@@ -63,7 +67,8 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
                 setState(() {});
               }
             },
-          ),
+          );
+         }),
           const SizedBox(
             height: 22,
           ),
