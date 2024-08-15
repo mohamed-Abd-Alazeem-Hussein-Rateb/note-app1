@@ -5,10 +5,10 @@ sealed class CreatnoteState {}
 
 final class CreatnoteInitial extends CreatnoteState {}
 final class CreatnoteLoading extends CreatnoteState {}
-final class CreatnoteSucess extends CreatnoteState {
+final class CreatNoteSucess extends CreatnoteState {
   final List<NoteModle> notes;
 
-  CreatnoteSucess({required this.notes});
+  CreatNoteSucess( this.notes);
 }
 final class CreatnoteError extends CreatnoteState {
 

@@ -7,7 +7,7 @@ class EditNoteBodyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+      padding: const EdgeInsets.symmetric(vertical: 38,horizontal: 15),
       child:  Column(
         children: [
           Row(

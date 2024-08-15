@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/cubits/add_note_cubit/addnote_cubit.dart';
+import 'package:notes/views/notes_app.dart';
 import 'package:notes/widgets/add_valdite_bottom_sheet.dart';
 
 class NoteBottomSheet extends StatelessWidget {
@@ -27,7 +28,7 @@ class NoteBottomSheet extends StatelessWidget {
                 ));
               }
               if (state is AddnoteSucess) {
-                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NoteView()));
               }
               if (state is AddnoteError) {
                 print('falied ${state.errMassge}');
