@@ -7,13 +7,13 @@ class NoteModle extends HiveObject {
    @HiveField(0)
   final String id;  // حقل معرف فريد
   @HiveField(1)
-  final String title;
+   String title;
   @HiveField(2)
-  final String content;
+   String content;
   @HiveField(3)
   final String data;
   @HiveField(4)
-  final int color;
+   int color;
 
   NoteModle({
    required this.title,

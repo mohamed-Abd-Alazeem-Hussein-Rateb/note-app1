@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/cubits/add_note_cubit/addnote_cubit.dart';
 import 'package:notes/models/note_modle.dart';
+import 'package:notes/widgets/color_list_item.dart';
 import 'package:notes/widgets/custom_bottom.dart';
 import 'package:notes/widgets/custom_text_field.dart';
 
@@ -45,6 +46,10 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
             maxline: 6,
           ),
           const SizedBox(
+            height: 18,
+          ),
+          ColorListView(),
+          const SizedBox(
             height: 22,
           ),
           BlocBuilder<AddnoteCubit, AddnoteState>(builder: (context, state) {
@@ -86,3 +91,5 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
     );
   }
 }
+
+

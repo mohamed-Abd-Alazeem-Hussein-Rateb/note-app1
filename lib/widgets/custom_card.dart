@@ -14,7 +14,7 @@ class CustomCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const EditNoteView();
+          return  EditNoteView(note:noteModle ,);
         }));
       },
       child: Dismissible(
