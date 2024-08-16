@@ -38,7 +38,6 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
             height: 18,
           ),
           CustomTextField(
-            
             onSaved: (value) {
               subTitle = value;
             },
@@ -48,27 +47,37 @@ class _AddValditeBotttomSheetState extends State<AddValditeBotttomSheet> {
           const SizedBox(
             height: 22,
           ),
-         BlocBuilder<AddnoteCubit, AddnoteState>(
-          builder: (context, state) {
-           return  CustomBottom(
-            isloading: state is AddNoteLoading ? true : false,
-            onTap: () {
-              if (fromkey.currentState!.validate()) {
-                fromkey.currentState!.save();
-                var noteModle = NoteModle(
-                    title: title!,
-                    content: subTitle!,
-                    data: DateTime.now().toString(),
-                    color: Colors.blue.value);
-                    
-                BlocProvider.of<AddnoteCubit>(context).addNote(noteModle);
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
-            },
-          );
-         }),
+          BlocBuilder<AddnoteCubit, AddnoteState>(builder: (context, state) {
+            return CustomBottom(
+              isloading: state is AddNoteLoading ? true : false,
+              onTap: () {
+                if (fromkey.currentState!.validate()) {
+                  fromkey.currentState!.save();
+                  // تنسيق التاريخ والوقت مع AM/PM وفاصل بينهما
+                  DateTime now = DateTime.now();
+                  String hour = (now.hour > 12)
+                      ? (now.hour - 12).toString().padLeft(2, '0')
+                      : now.hour.toString().padLeft(2, '0');
+                  String minute = now.minute.toString().padLeft(2, '0');
+                  String period = now.hour >= 12 ? 'PM' : 'AM';
+
+                  // تنسيق التاريخ بالشكل المطلوب
+                  String formattedDate =
+                      "${now.day}/${now.month}/${now.year} - $hour:$minute $period";
+                  var noteModle = NoteModle(
+                      title: title!,
+                      content: subTitle!,
+                      data: formattedDate,
+                      color: Colors.blue.value);
+
+                  BlocProvider.of<AddnoteCubit>(context).addNote(noteModle);
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
+              },
+            );
+          }),
           const SizedBox(
             height: 22,
           ),

@@ -28,7 +28,7 @@ class NoteBottomSheet extends StatelessWidget {
                 ));
               }
               if (state is AddnoteSucess) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NoteView()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const NoteView()));
               }
               if (state is AddnoteError) {
                 print('falied ${state.errMassge}');

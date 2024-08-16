@@ -8,6 +8,7 @@ class NoteListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return BlocBuilder<CreatnoteCubit, CreatnoteState>(
       builder: (context, state) {
         if (state is CreatNoteSucess) {
@@ -17,10 +18,7 @@ class NoteListView extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 11.0),
                 child: CustomCard(
-                  color: Colors.orange.withOpacity(0.9),
-                  title: state.notes[index].title, // يمكنك استخدام البيانات من state هنا
-                  description: state.notes[index].content, // يمكنك استخدام البيانات من state هنا
-                  date: state.notes[index].data, // يمكنك استخدام البيانات من state هنا
+                noteModle: state.notes[index],
                 ),
               );
             },

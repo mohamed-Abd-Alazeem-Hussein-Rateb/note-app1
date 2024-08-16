@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:notes/models/note_modle.dart';
 import 'package:notes/views/edit_note_view.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key, required this.title, required this.description, required this.date, required this.color});
-   final String title;
-  final String description;
-  final String date;
-  final Color color;
+  const CustomCard({super.key,  required this.noteModle});
+  //  final String title;
+  // final String description;
+  // final String date;
+  // final Color color;
+  final NoteModle noteModle;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -19,7 +21,7 @@ class CustomCard extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: color,
+                  color:Colors.amber,
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Column(
@@ -28,7 +30,7 @@ class CustomCard extends StatelessWidget {
                      Row(
                       children: [
                         Text(
-                          title,
+                          noteModle.title,
                           style:const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -36,7 +38,9 @@ class CustomCard extends StatelessWidget {
                         ),
                        const Spacer(),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                        noteModle.delete();
+                        },
                         child: const  Icon(
                             Icons.delete,
                             size: 30,
@@ -47,7 +51,7 @@ class CustomCard extends StatelessWidget {
                     ),
                    const SizedBox(height: 8),
                     Text(
-                      description,
+                      noteModle.content,
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black.withOpacity(0.6),
@@ -57,7 +61,7 @@ class CustomCard extends StatelessWidget {
                     Align(
                       alignment: Alignment.bottomRight,
                       child: Text(
-                        date,
+                        noteModle.data,
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.black.withOpacity(0.6),
